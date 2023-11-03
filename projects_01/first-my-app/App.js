@@ -1,20 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, TextInput, View, Button } from 'react-native';
+import StateWithClassComponent from './StateWithClassComponent';
+import StateWithFuctionalComponent from './StateWithFuctionalComponent';
+import UseEffectWithClassComponent from './UseEffectWithClassComponent';
+import UseEffectWithFunctionalComponent from './UseEffectWithFunctionalComponent';
+/**
+ * Header
+ * MyProfile
+ * Division
+ * Friends_Section
+ * Friends_List
+ */
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+export default function APP() {
+    return (
+        <View style={styles.container}>
+            {/* <StateWithClassComponent /> */}
+            {/* <StateWithFuctionalComponent /> */}
+            {/* {<UseEffectWithClassComponent />} */}
+            {<UseEffectWithFunctionalComponent />}
+        </View>
+    );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
 });
