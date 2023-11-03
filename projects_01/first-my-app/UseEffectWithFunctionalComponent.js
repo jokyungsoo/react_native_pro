@@ -1,16 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, Button, TextInput, Switch, ActivityIndicator } from 'react-native';
 
+/*########################################
+#         상태와 상태변경 함수 지정            #
+##########################################*/
+
 const Component = () => {
     const [count, setCount] = useState(0);
     const [isOn, setIsOn] = useState(true);
     const [input, setInput] = useState('');
     const [isRefresh, setIsRefresh] = useState(false);
 
+    /*########################################
+#         부수효과 및 생명주기 관리            #
+##########################################*/
+
     useEffect(() => {
         console.log('didMount');
     }, []);
-
     useEffect(() => {
         console.log('didUpdate - count', count);
     }, [count]);
@@ -30,6 +37,9 @@ const Component = () => {
             }, 2000);
         }
     }, [isRefresh]);
+    /*########################################
+#         UI 구성요소와 상태연결              #
+##########################################*/
 
     return (
         <View style={{ alignItems: 'center' }}>
