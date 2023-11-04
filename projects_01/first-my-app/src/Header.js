@@ -1,4 +1,5 @@
 // yarn add react-native-iphone-x-helper : iphon-x
+
 import { StyleSheet, View, Text } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -27,7 +28,7 @@ export default () => {
 
 const styles = StyleSheet.create({
     headerContainer: {
-        // backgroundColor: 'grey',
+        backgroundColor: 'grey',
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingVertical: 10,
