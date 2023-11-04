@@ -28,7 +28,7 @@ export default () => {
 
 const styles = StyleSheet.create({
     headerContainer: {
-        backgroundColor: 'grey',
+        // backgroundColor: 'grey',
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingVertical: 10,
