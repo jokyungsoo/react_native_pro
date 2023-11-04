@@ -11,25 +11,27 @@ const Component = () => {
     const [input, setInput] = useState('');
     const [isRefresh, setIsRefresh] = useState(false);
 
-    /*########################################
-#         부수효과 및 생명주기 관리            #
-##########################################*/
+    /*######################################### 
+    #         부수효과 및 생명주기 관리#
+    ##########################################*/
 
+    /*아무것도 호출하지 않기에 didmount출력 프로그램을 시작할때 한번만 호출*/
     useEffect(() => {
         console.log('didMount');
     }, []);
+    /*변경된 count의 값을 호출 -> 0도 초기화면에서 변경한것으로 간주*/
     useEffect(() => {
         console.log('didUpdate - count', count);
     }, [count]);
-
+    /*true false 상태변경시 호출 */
     useEffect(() => {
         console.log('didUpdate - isOn', isOn);
     }, [isOn]);
-
+    /*Text를 입력시 호출 */
     useEffect(() => {
         console.log('didUpdate - input', input);
     }, [input]);
-
+    /*만약에 isRefresh상태가 되면 2초 뒤에 setIsRefresh 상태로 다시 돌아간다 */
     useEffect(() => {
         if (isRefresh) {
             setTimeout(() => {
@@ -37,9 +39,10 @@ const Component = () => {
             }, 2000);
         }
     }, [isRefresh]);
+
     /*########################################
-#         UI 구성요소와 상태연결              #
-##########################################*/
+    #         UI 구성요소와 상태연결              #
+    ##########################################*/
 
     return (
         <View style={{ alignItems: 'center' }}>
@@ -66,6 +69,7 @@ const Component = () => {
                     setIsRefresh(true);
                 }}
             />
+            {/* ActivityIndicator = 새로고침 ui */}
             {isRefresh && <ActivityIndicator />}
         </View>
     );
