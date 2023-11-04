@@ -11,6 +11,7 @@ import Header from './src/Header';
 import MyProfile from './src/MyProfile';
 import { myProfile } from './src/date';
 import Margin from './src/Margin';
+import Division from './src/Division';
 
 const StatusBarHeight = getStatusBarHeight(true);
 const BottomSpace = getBottomSpace();
@@ -30,6 +31,8 @@ export default function APP() {
             <Margin height={10} />
             {/* MyProfile 함수를 만들어주고 호출함, date.myProfile 함수를 호출함 */}
             <MyProfile uri={myProfile.uri} name={myProfile.name} introduction={myProfile.introduction} />
+            <Margin height={15} />
+            <Division />
         </View>
     );
 }
