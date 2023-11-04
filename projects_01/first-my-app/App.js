@@ -1,24 +1,18 @@
 import React from 'react';
-import { StyleSheet, Text, TextInput, View, Button } from 'react-native';
-import StateWithClassComponent from './StateWithClassComponent';
-import StateWithFuctionalComponent from './StateWithFuctionalComponent';
-import UseEffectWithClassComponent from './UseEffectWithClassComponent';
-import UseEffectWithFunctionalComponent from './UseEffectWithFunctionalComponent';
-/**
- * Header
- * MyProfile
- * Division
- * Friends_Section
- * Friends_List
- */
+import { useState } from 'react';
+import { Platform, SafeAreaView, StyleSheet, Text, TextInput, View, Button } from 'react-native';
+import Header from './src/Header';
+import { getBottomSpace, getStatusBarHeight } from 'react-native-iphone-x-helper';
+
+const StatusBarHeight = getStatusBarHeight(true);
+const BottomSpace = getBottomSpace();
+
+console.log(`${Platform.OS}: ${StatusBarHeight}, ${BottomSpace}`);
 
 export default function APP() {
     return (
         <View style={styles.container}>
-            {/* <StateWithClassComponent /> */}
-            {/* <StateWithFuctionalComponent /> */}
-            {/* {<UseEffectWithClassComponent />} */}
-            {<UseEffectWithFunctionalComponent />}
+            <Header />
         </View>
     );
 }
@@ -26,8 +20,10 @@ export default function APP() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        paddingBottom: BottomSpace,
+        paddingTop: StatusBarHeight,
         backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
+        // alignItems: 'center',
+        // justifyContent: 'flex-end',
     },
 });
