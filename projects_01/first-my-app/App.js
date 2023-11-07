@@ -9,9 +9,10 @@ import { getBottomSpace, getStatusBarHeight } from 'react-native-iphone-x-helper
 
 import Header from './src/Header';
 import MyProfile from './src/MyProfile';
-import { myProfile } from './src/date';
+import { myProfile, friendProfiles } from './src/date';
 import Margin from './src/Margin';
 import Division from './src/Division';
+import FriendSection from './src/FriendSection';
 
 const StatusBarHeight = getStatusBarHeight(true);
 const BottomSpace = getBottomSpace();
@@ -19,6 +20,9 @@ const BottomSpace = getBottomSpace();
 console.log(`${Platform.OS}: ${StatusBarHeight}, ${BottomSpace}`);
 
 export default function APP() {
+    const onPressArrow = () => {
+        console.log('Clicked');
+    };
     return (
         // <SafeAreaProvider>
         //     <SafeAreaView style={styles.container} edges={['right', 'left']}>
@@ -33,6 +37,7 @@ export default function APP() {
             <MyProfile uri={myProfile.uri} name={myProfile.name} introduction={myProfile.introduction} />
             <Margin height={15} />
             <Division />
+            <FriendSection friendProfileLen={friendProfiles.length} />
         </View>
     );
 }
